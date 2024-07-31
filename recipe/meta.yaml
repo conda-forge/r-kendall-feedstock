@@ -1,6 +1,5 @@
 {% set version = "2.2.1" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-kendall
@@ -13,8 +12,7 @@ source:
   sha256: 55f49d1c7f268ca36e5199042c9398420c9945842cc00eac4c728e486849b3f6
 
 build:
-  merge_build_host: true  # [win]
-  number: 2
+  number: 3
   rpaths:
     - lib/R/lib/
     - lib/
@@ -23,6 +21,7 @@ requirements:
   build:
     - {{ compiler('fortran') }}        # [not win]
     - {{ compiler('m2w64_fortran') }}  # [win]
+    - {{ stdlib("c") }}    # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
