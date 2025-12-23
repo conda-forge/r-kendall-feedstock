@@ -1,4 +1,4 @@
-{% set version = "2.2.1" %}
+{% set version = "2.2.2" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Kendall_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Kendall/Kendall_{{ version }}.tar.gz
-  sha256: 55f49d1c7f268ca36e5199042c9398420c9945842cc00eac4c728e486849b3f6
+  sha256: 7b1e676a5e4855ed7c69f343b1241833f97b03399cdc640c8b62633b7897b6e9
 
 build:
-  number: 4
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
